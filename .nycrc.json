@@ -1,8 +1,8 @@
 {
+  "all": true,
   "exclude": [
     "**/*.d.ts",
-    "**/*.test*.ts",
-    "**/index.ts"
+    "**/*.test*.ts"
   ],
   "extension": [
     ".ts"
