@@ -15,7 +15,7 @@
   "name": "karma-test",
   "scripts": {
     "test": "yarn test:browser && yarn test:node",
-    "test:browser": "nyc karma start",
-    "test:node": "nyc jasmine --config=jasmine.json"
+    "test:browser": "nyc --temp-dir=.nyc_output/browser --report-dir=coverage/browser karma start",
+    "test:node": "nyc --temp-dir=.nyc_output/node --report-dir=coverage/node jasmine --config=jasmine.json"
   }
 }
