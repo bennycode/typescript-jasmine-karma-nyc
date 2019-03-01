@@ -1,0 +1,21 @@
+{
+  "devDependencies": {
+    "@types/jasmine": "3.3.8",
+    "@types/karma": "3.0.2",
+    "@types/node": "11.9.6",
+    "jasmine": "3.3.1",
+    "karma": "4.0.1",
+    "karma-chrome-launcher": "2.2.0",
+    "karma-jasmine": "2.0.1",
+    "karma-typescript": "4.0.0",
+    "nyc": "13.2.0",
+    "ts-node": "8.0.2",
+    "typescript": "3.3.3333"
+  },
+  "name": "karma-test",
+  "scripts": {
+    "test": "yarn test:browser && yarn test:node",
+    "test:browser": "nyc karma start",
+    "test:node": "nyc jasmine --config=jasmine.json"
+  }
+}
