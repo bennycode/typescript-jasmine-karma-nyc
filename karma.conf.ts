@@ -10,7 +10,7 @@ module.exports = function (config: Config) {
     ],
     "colors": true,
     "concurrency": Infinity,
-    "exclude": [],
+    "exclude": jasmineConfig.spec_files,
     "files": [
       "**/*.ts"
     ],

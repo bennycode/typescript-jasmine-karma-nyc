@@ -1,5 +1,14 @@
-function seventyTwo(): number {
-  return 72;
+enum Environment {
+  BROWSER = 'Browser',
+  NODEJS = 'Node.js'
 }
 
-export {seventyTwo};
+function getEnvironment(): string {
+  if (typeof window === 'undefined') {
+    return Environment.NODEJS;
+  } else {
+    return Environment.BROWSER;
+  }
+}
+
+export {getEnvironment, Environment};
