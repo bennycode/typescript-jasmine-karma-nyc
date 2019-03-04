@@ -21,13 +21,21 @@ module.exports = function (config: Config) {
     "logLevel": config.LOG_INFO,
     "port": 9876,
     "preprocessors": {
-      "**/*.ts": "karma-typescript"
+      "**/*.ts": ["karma-typescript", "coverage"]
     },
     "reporters": [
-      "progress"
+      "progress", "coverage"
     ],
-    "singleRun": true
+    "singleRun": true,
   };
 
-  config.set(options);
+  const extendedOptions = {
+    coverageReporter: {
+      dir: `${process.cwd()}/coverage/browser`,
+      includeAllSources: true,
+      type: 'html'
+    }
+  };
+
+  config.set({...options, ...extendedOptions});
 };
