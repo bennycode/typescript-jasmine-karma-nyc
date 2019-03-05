@@ -10,13 +10,13 @@ module.exports = function(config: Config) {
     concurrency: Infinity,
     exclude: jasmineConfig.spec_files,
     files: ['**/*.ts'],
-    frameworks: ['karma-typescript', 'jasmine'],
+    frameworks: ['jasmine', 'karma-typescript'],
     logLevel: config.LOG_INFO,
     port: 9876,
     preprocessors: {
       '**/*.ts': ['karma-typescript', 'coverage'],
     },
-    reporters: ['progress', 'coverage'],
+    reporters: ['progress', 'karma-typescript', 'coverage'],
     singleRun: true,
   };
 
