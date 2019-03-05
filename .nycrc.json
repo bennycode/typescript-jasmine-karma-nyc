@@ -3,6 +3,8 @@
   "exclude": ["**/*.d.ts", "**/*.test*.ts"],
   "extension": [".ts"],
   "include": ["src/**/*.ts"],
-  "reporter": ["html"],
-  "require": ["ts-node/register"]
+  "report-dir": "coverage/node",
+  "reporter": ["json", "html"],
+  "require": ["ts-node/register"],
+  "temp-dir": ".nyc_output"
 }

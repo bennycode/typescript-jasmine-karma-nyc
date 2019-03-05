@@ -16,12 +16,14 @@
     "ts-node": "8.0.2",
     "typescript": "3.3.3333"
   },
+  "license": "MIT",
   "name": "karma-test",
   "scripts": {
     "clean": "rimraf .nyc_output coverage",
+    "coverage": "yarn clean && yarn test && nyc report",
     "lint": "prettier --ignore-path .gitignore --write \"**/*.{js,json,md,ts,yml}\"",
-    "test": "yarn test:browser && yarn test:node",
+    "test": "yarn test:node && yarn test:browser",
     "test:browser": "karma start",
-    "test:node": "nyc --temp-dir=.nyc_output/node --report-dir=coverage/node jasmine --config=jasmine.json"
+    "test:node": "nyc jasmine --config=jasmine.json"
   }
 }

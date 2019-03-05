@@ -22,9 +22,12 @@ module.exports = function(config: Config) {
 
   const extendedOptions = {
     coverageReporter: {
-      dir: `${process.cwd()}/coverage/browser`,
+      dir: process.cwd(),
       includeAllSources: true,
-      type: 'html',
+      reporters: [
+        {type: 'html', subdir: 'coverage/browser'},
+        {type: 'json', subdir: 'coverage/browser', file: 'coverage-final.json'},
+      ],
     },
   };
 
