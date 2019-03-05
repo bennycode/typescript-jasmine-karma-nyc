@@ -14,22 +14,27 @@ module.exports = function(config: Config) {
     logLevel: config.LOG_INFO,
     port: 9876,
     preprocessors: {
-      '**/*.ts': ['karma-typescript', 'coverage'],
+      '**/*.ts': ['karma-typescript'],
     },
-    reporters: ['progress', 'karma-typescript', 'coverage'],
+    reporters: ['progress', 'karma-typescript'],
     singleRun: true,
   };
 
-  const extendedOptions = {
-    coverageReporter: {
-      dir: process.cwd(),
-      includeAllSources: true,
-      reporters: [
-        {type: 'html', subdir: 'coverage/browser'},
-        {type: 'json', subdir: 'coverage/browser', file: 'coverage-final.json'},
-      ],
+  const karmaTypescriptConfig = {
+    karmaTypescriptConfig: {
+      reports: {
+        html: {
+          directory: process.cwd(),
+          subdirectory: 'coverage/browser',
+        },
+        json: {
+          directory: process.cwd(),
+          subdirectory: 'coverage/browser',
+          filename: 'coverage-final.json',
+        },
+      },
     },
   };
 
-  config.set({...options, ...extendedOptions});
+  config.set({...options, ...karmaTypescriptConfig});
 };
