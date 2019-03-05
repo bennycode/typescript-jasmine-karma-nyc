@@ -1,19 +1,8 @@
 {
   "all": true,
-  "exclude": [
-    "**/*.d.ts",
-    "**/*.test*.ts"
-  ],
-  "extension": [
-    ".ts"
-  ],
-  "include": [
-    "src/**/*.ts"
-  ],
-  "reporter": [
-    "html"
-  ],
-  "require": [
-    "ts-node/register"
-  ]
+  "exclude": ["**/*.d.ts", "**/*.test*.ts"],
+  "extension": [".ts"],
+  "include": ["src/**/*.ts"],
+  "reporter": ["html"],
+  "require": ["ts-node/register"]
 }

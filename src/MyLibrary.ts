@@ -1,6 +1,6 @@
 enum Environment {
   BROWSER = 'Browser',
-  NODEJS = 'Node.js'
+  NODEJS = 'Node.js',
 }
 
 function getEnvironment(): string {
