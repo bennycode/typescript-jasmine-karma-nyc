@@ -25,8 +25,8 @@
     "lint": "prettier --ignore-path .gitignore --write \"**/*.{js,json,md,ts,yml}\"",
     "test": "yarn test:node && yarn test:browser",
     "test:browser": "karma start",
-    "test:node": "yarn test:node:html && yarn test:node:json",
-    "test:node:html": "nyc --report-dir=coverage/node/html --reporter=html jasmine --config=jasmine.json",
+    "test:node": "yarn test:node:json && yarn test:node:html",
+    "test:node:html": "nyc report --report-dir=coverage/node/html --reporter=html jasmine --config=jasmine.json",
     "test:node:json": "nyc --report-dir=coverage/json --reporter=json jasmine --config=jasmine.json"
   }
 }
