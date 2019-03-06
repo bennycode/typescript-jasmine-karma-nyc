@@ -21,7 +21,7 @@
   "scripts": {
     "clean": "rimraf .nyc_output coverage",
     "coverage": "yarn clean && yarn test",
-    "postcoverage": "nyc report --report-dir=coverage/merged/html --reporter=html -t coverage/json",
+    "postcoverage": "nyc report --temp-dir coverage/json --report-dir=coverage/merged/html --reporter=html",
     "lint": "prettier --ignore-path .gitignore --write \"**/*.{js,json,md,ts,yml}\"",
     "test": "yarn test:node && yarn test:browser",
     "test:browser": "karma start",
