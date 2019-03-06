@@ -21,10 +21,12 @@
   "scripts": {
     "clean": "rimraf .nyc_output coverage",
     "coverage": "yarn clean && yarn test",
-    "postcoverage": "nyc report --report-dir=coverage/combined --reporter=html",
+    "postcoverage": "nyc report --report-dir=coverage/merged/html --reporter=html -t coverage/json",
     "lint": "prettier --ignore-path .gitignore --write \"**/*.{js,json,md,ts,yml}\"",
     "test": "yarn test:node && yarn test:browser",
     "test:browser": "karma start",
-    "test:node": "nyc jasmine --config=jasmine.json"
+    "test:node": "yarn test:node:html && yarn test:node:json",
+    "test:node:html": "nyc --report-dir=coverage/node/html --reporter=html jasmine --config=jasmine.json",
+    "test:node:json": "nyc --report-dir=coverage/json --reporter=json jasmine --config=jasmine.json"
   }
 }
