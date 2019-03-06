@@ -29,8 +29,8 @@ module.exports = function(config: Config) {
         },
         json: {
           directory: process.cwd(),
-          subdirectory: 'coverage/browser',
-          filename: 'coverage-final.json',
+          subdirectory: '.nyc_output',
+          filename: 'coverage-browser.json',
         },
       },
     },

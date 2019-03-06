@@ -20,7 +20,7 @@
   "name": "karma-test",
   "scripts": {
     "clean": "rimraf .nyc_output coverage",
-    "coverage": "yarn clean && yarn test && nyc report",
+    "coverage": "yarn clean && yarn test && nyc report --report-dir=coverage/combined --reporter=html",
     "lint": "prettier --ignore-path .gitignore --write \"**/*.{js,json,md,ts,yml}\"",
     "test": "yarn test:node && yarn test:browser",
     "test:browser": "karma start",
