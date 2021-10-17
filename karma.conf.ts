@@ -1,7 +1,7 @@
 import {Config, ConfigOptions} from 'karma';
 import jasmineConfig from './jasmine.json';
 
-module.exports = function(config: Config) {
+module.exports = function (config: Config) {
   const options: ConfigOptions = {
     autoWatch: false,
     basePath: jasmineConfig.spec_dir,
